@@ -13,6 +13,19 @@ func main() {
 	now := time.Now()
 	fmt.Printf("It is now %v \n", now)
 
+	total := 0
+
+	for i := 0; i < 1000000000; i++ {
+		new_val := i%34/33
+		total += new_val
+	}
+	later := time.Now()
+
+
+
+	fmt.Printf("Total for long loop: %v\n", total)
+	fmt.Printf("elapsed time: %v\n", later.Sub(now))
+
 	fmt.Println("the month is", now.Month())
 	fmt.Println("the day is", now.Day())
 	fmt.Println("the weekday is", now.Weekday())
